@@ -114,7 +114,7 @@
 }
 
 .res-text-content h2 {
-  font-size: 3rem;
+  font-size: 40px;
   margin-bottom: 1.5rem;
 }
 
@@ -239,7 +239,7 @@
 }
 
 .ind-editorial-sticky h2 {
-  font-size: 2.5rem;
+  font-size: 40px;
   margin-bottom: 1.5rem;
 }
 
@@ -409,7 +409,7 @@
 
 .frosted-content h2 {
   color: white;
-  font-size: 3rem;
+  font-size: 40px;
   margin-bottom: 1rem;
 }
 
@@ -539,6 +539,14 @@
   color: #fff;
 }
 
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
 @media (max-width: 480px) {
   .hero-text-side h1 {
     font-size: 2.25rem;
@@ -551,5 +559,8 @@
   }
   .overview-grid {
     grid-template-columns: 1fr;
+  }
+  .cta-actions {
+    flex-direction: column;
   }
 }

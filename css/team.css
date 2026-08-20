@@ -1,6 +1,9 @@
 /* ==========================================================================
    Team Page Specific Styles
    ========================================================================== */
+h2 {
+  font-size: 40px;
+}
 
 /* --- 1. Hero Typographic Marquee --- */
 .team-hero {
@@ -13,6 +16,27 @@
   justify-content: center;
   background-color: var(--primary-navy);
   overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero-bg-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.6);
 }
 
 .bg-marquee {

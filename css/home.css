@@ -479,6 +479,10 @@
   .hero-visual {
     height: 300px;
   }
+  .img-main {
+    width: 85%;
+    object-position: left center;
+  }
   .stat-number {
     font-size: 3rem;
   }

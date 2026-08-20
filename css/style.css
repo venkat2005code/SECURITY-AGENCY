@@ -467,19 +467,21 @@ img {
 
 .newsletter-form input {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border: none;
+  padding: 0.875rem 1rem;
+  border: 2px solid transparent;
   background-color: rgba(255,255,255,0.1);
   color: var(--bg-white);
   border-radius: 4px 0 0 4px;
 }
 
 .newsletter-form input:focus {
-  outline: 1px solid var(--accent-gold);
+  outline: none;
+  border-color: var(--accent-gold);
 }
 
 .newsletter-form button {
   border-radius: 0 4px 4px 0;
+  margin: 0;
 }
 
 .footer-bottom {
