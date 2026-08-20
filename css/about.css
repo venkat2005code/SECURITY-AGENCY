@@ -1,0 +1,337 @@
+/* ==========================================================================
+   About Page Specific Styles
+   ========================================================================== */
+
+/* --- 1. Hero Glassmorphism --- */
+.about-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--nav-height);
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero-bg-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.6);
+}
+
+.glass-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-box h1 {
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.glass-box p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- 2. Editorial Layout --- */
+.editorial-layout {
+  display: flex;
+  gap: 6rem;
+}
+
+.sticky-column {
+  flex: 0 0 30%;
+  position: sticky;
+  top: calc(var(--nav-height) + 4rem);
+  height: max-content;
+}
+
+.sticky-column h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.scrolling-content {
+  flex: 1;
+}
+
+.editorial-block {
+  margin-bottom: 4rem;
+}
+
+.drop-cap {
+  float: left;
+  font-size: 5rem;
+  line-height: 4rem;
+  padding: 0.5rem 1rem 0.5rem 0;
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.editorial-image {
+  margin: 4rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- 3. Timeline --- */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: var(--border-color);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 2rem 3rem;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 3rem;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -10px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -10px;
+}
+
+.year {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* --- 4. Hexagonal Grid --- */
+.hex-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hex-wrap {
+  width: 200px;
+  height: 230px;
+  position: relative;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.hex {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-white);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.hex:hover {
+  transform: scale(1.05);
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+}
+
+.hex-content {
+  text-align: center;
+}
+
+.hex-content svg {
+  margin-bottom: 1rem;
+  color: var(--primary-navy);
+}
+
+/* --- 5. Circular Orbs --- */
+.orbs-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.orb {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-light) 100%);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.orb:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--accent-gold) 200%);
+}
+
+.orb-inner h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* --- 6. CTA Diagonal --- */
+.cta-diagonal {
+  position: relative;
+  padding: 8rem 0;
+  overflow: hidden;
+  background-color: var(--primary-navy);
+}
+
+.diagonal-bg {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background-color: var(--accent-gold);
+  transform: rotate(-3deg);
+  transform-origin: center;
+  z-index: 1;
+}
+
+[data-theme="dark"] .diagonal-bg {
+  background-color: var(--secondary-steel);
+}
+
+.diagonal-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.diag-text h2 {
+  color: var(--primary-navy);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .diag-text h2 {
+  color: var(--text-light);
+}
+
+.diag-text p {
+  color: var(--primary-navy);
+  font-size: 1.25rem;
+  max-width: 500px;
+}
+
+[data-theme="dark"] .diag-text p {
+  color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .editorial-layout {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .sticky-column {
+    position: static;
+  }
+  .timeline-line {
+    left: 30px;
+  }
+  .timeline-item.left, .timeline-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 80px;
+  }
+  .timeline-item.left .timeline-dot, .timeline-item.right .timeline-dot {
+    left: 20px;
+    right: auto;
+  }
+  .diagonal-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .glass-box {
+    padding: 2rem;
+  }
+  .glass-box h1 {
+    font-size: 2.5rem;
+  }
+}

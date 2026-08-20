@@ -1,0 +1,485 @@
+/* ==========================================================================
+   Home Page Specific Styles
+   ========================================================================== */
+
+/* --- 1. Hero Split Layout --- */
+.hero-split {
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: 6rem;
+  background-color: var(--bg-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  position: relative;
+  height: 600px;
+}
+
+.hero-visual .visual-bg {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 80%;
+  height: 80%;
+  background-color: var(--primary-navy);
+  border-radius: 30px;
+  transform: rotate(5deg);
+  z-index: 1;
+}
+
+[data-theme="dark"] .hero-visual .visual-bg {
+  background-color: var(--secondary-steel);
+}
+
+.hero-img {
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+
+.img-main {
+  width: 70%;
+  height: 80%;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.img-offset {
+  width: 50%;
+  height: 60%;
+  top: 10%;
+  right: 0;
+  z-index: 3;
+  border: 8px solid var(--bg-light);
+}
+
+/* --- 2. Services Intro (Bento Grid) --- */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 250px);
+  gap: 1.5rem;
+}
+
+.bento-card {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.bento-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.bento-card:hover img {
+  transform: scale(1.05);
+}
+
+.bento-card .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  z-index: 2;
+}
+
+.bento-card .card-content h3 {
+  color: #fff;
+}
+
+.bento-card.dark, .bento-card.accent {
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.bento-card.dark .card-content, .bento-card.accent .card-content {
+  position: static;
+  background: none;
+  padding: 0;
+}
+
+.bento-card.dark {
+  background-color: var(--primary-navy);
+  color: var(--bg-white);
+}
+
+.bento-card.accent {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+}
+
+.card-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.card-tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.card-small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* --- 3. Why Choose Us (Zig-Zag) --- */
+.why-choose-us {
+  background-color: var(--bg-off-white);
+}
+
+.zig-zag-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.zig-zag-row:last-child {
+  margin-bottom: 0;
+}
+
+.zig-zag-row.reverse .zz-content {
+  order: 2;
+}
+
+.zig-zag-row.reverse .zz-image {
+  order: 1;
+}
+
+.zz-content h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.zz-content p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+}
+
+.zz-content ul li {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.zz-image img {
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+/* --- 4. Statistics --- */
+.dark-bg {
+  background-color: var(--primary-navy);
+  color: var(--text-light);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+}
+
+/* --- 5. Testimonials (Marquee) --- */
+.testimonials-marquee {
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+.marquee-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 2rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.testim-card {
+  width: 400px;
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.testim-card .stars {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.testim-card p {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.client-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-info h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.client-info span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* --- 6. CTA Overlap --- */
+.cta-overlap {
+  position: relative;
+  padding-bottom: 8rem;
+}
+
+.cta-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-color: var(--bg-white);
+  z-index: 1;
+}
+
+.cta-floating-card {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #1a365d 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  box-shadow: var(--shadow-lg);
+  color: white;
+}
+
+.cta-text h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.cta-text p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.coverage-areas {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.coverage-areas h4 {
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.enquiry-form {
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.enquiry-form input,
+.enquiry-form select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  background-color: var(--bg-white);
+  color: var(--text-main);
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-container, .cta-floating-card {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    height: 400px;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .card-large, .card-tall, .card-small {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .zig-zag-row {
+    grid-template-columns: 1fr;
+  }
+  .zig-zag-row.reverse .zz-content {
+    order: 1;
+  }
+  .zig-zag-row.reverse .zz-image {
+    order: 2;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .cta-floating-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-grid, .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .testim-card {
+    width: 300px;
+    padding: 1.5rem;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-visual {
+    height: 300px;
+  }
+  .stat-number {
+    font-size: 3rem;
+  }
+}

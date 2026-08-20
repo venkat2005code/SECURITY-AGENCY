@@ -1,0 +1,320 @@
+/* ==========================================================================
+   Home 2 Specific Styles
+   ========================================================================== */
+
+/* --- 1. Cinematic Video Hero --- */
+.h2-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  margin-top: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.h2-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.h2-video-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.h2-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.h2-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.h2-hero-content h1 {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.h2-hero-content p {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* --- 2. Interactive Tabs --- */
+.tabs-container {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.tabs-header {
+  display: flex;
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1.5rem;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--primary-navy);
+  background-color: rgba(0,0,0,0.02);
+}
+
+.tab-btn.active {
+  color: var(--accent-gold);
+  border-bottom-color: var(--accent-gold);
+  background-color: var(--bg-white);
+}
+
+.tabs-content {
+  padding: 4rem;
+}
+
+.tab-pane {
+  display: none;
+  animation: fade-in 0.3s ease;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-inner {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.tab-text { flex: 1; }
+.tab-img { flex: 1; }
+.tab-img img { border-radius: 12px; box-shadow: var(--shadow-md); }
+.tab-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.tab-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+}
+
+/* --- 3. Polaroid Gallery --- */
+.polaroid-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.polaroid {
+  background-color: white;
+  padding: 1rem 1rem 3rem 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform: rotate(-5deg);
+  transition: transform var(--transition-smooth), z-index 0s;
+  position: relative;
+  width: 300px;
+}
+
+.polaroid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.p-caption {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.p-1 { transform: rotate(-5deg); z-index: 1; }
+.p-2 { transform: rotate(2deg) translateY(-20px); z-index: 2; }
+.p-3 { transform: rotate(7deg); z-index: 1; }
+
+.polaroid:hover {
+  transform: rotate(0) scale(1.1);
+  z-index: 10;
+}
+
+/* --- 4. Horizontal Scroll Section --- */
+.h2-horizontal-sec {
+  padding: 6rem 0;
+  background-color: var(--bg-white);
+  overflow: hidden;
+}
+
+.horizontal-scroll-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 2rem 4rem;
+  /* Hide scrollbar for clean look */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-card {
+  flex: 0 0 400px;
+  scroll-snap-align: center;
+  background-color: var(--primary-navy);
+  color: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border-bottom: 4px solid var(--accent-gold);
+}
+
+.scroll-card h3 {
+  color: var(--accent-gold);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* --- 5. Pricing Table --- */
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.pricing-card {
+  background-color: var(--bg-white);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+  max-width: 350px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.pricing-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary-navy);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .pricing-card .price { color: var(--text-light); }
+
+.pricing-card ul {
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.pricing-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+}
+
+.pricing-card.highlight {
+  border: 2px solid var(--accent-gold);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.popular-tag {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+/* --- 6. Split CTA --- */
+.h2-split-cta {
+  display: flex;
+  height: 60vh;
+}
+
+.cta-half {
+  flex: 1;
+}
+
+.text-half {
+  background-color: var(--primary-navy);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10%;
+}
+
+.text-half h2 { color: white; font-size: 3rem; }
+
+.img-half {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tab-inner { flex-direction: column; }
+  .polaroid-gallery { flex-direction: column; align-items: center; }
+  .p-1, .p-2, .p-3 { transform: none; margin-bottom: 1rem; }
+  .pricing-table { flex-direction: column; align-items: center; }
+  .pricing-card { max-width: 100%; transform: none; }
+  .pricing-card.highlight { transform: none; }
+  .h2-split-cta { flex-direction: column; height: auto; }
+  .img-half { height: 400px; }
+}
