@@ -358,6 +358,22 @@
   border-color: var(--accent-gold);
 }
 
+.wizard-step .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .wizard-step .form-row {
+    flex-direction: column;
+  }
+}
+
+.wizard-step .text-center {
+  margin-top: 1.5rem;
+}
+
 .text-right {
   text-align: right;
   margin-top: 2rem;
